@@ -14,4 +14,5 @@ runs:
         java-version: 21
 
     - name: 📦 Build native image using container
+      shell: bash
       run: ./mvnw clean package -Dnative -Dquarkus.native.container-build=true
