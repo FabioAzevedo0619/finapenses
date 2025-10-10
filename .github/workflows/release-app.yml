@@ -1,0 +1,14 @@
+name: Build & Release Finapenses Application
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build-server:
+    name: Build server native executable
+    defaults:
+      run:
+        working-directory: ./server
+    steps:
+      - name: Build server native executable
+        uses: FabioAzevedo0619/finapenses/.github/actions/build-server@main
