@@ -17,3 +17,9 @@ runs:
       shell: bash
       working-directory: ./server
       run: ./mvnw clean package -Dnative -Dquarkus.native.container-build=true
+
+    - name: Upload server native executable
+      uses: actions/upload-artifact@v4
+      with:
+        name: server-executable
+        path: target/*-runner
