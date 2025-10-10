@@ -2,7 +2,7 @@ package pt.fabioazevedo.transaction.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.PositiveOrZero;
+import jakarta.validation.constraints.Positive;
 import lombok.Builder;
 
 import java.math.BigDecimal;
@@ -13,7 +13,7 @@ import java.util.UUID;
 public record Transaction(
         UUID id,
         @NotNull @NotBlank String name,
-        @NotNull @PositiveOrZero BigDecimal amount,
+        @NotNull @Positive BigDecimal amount,
         @NotNull TransactionType transactionType,
         @NotNull LocalDate date
 ) {}

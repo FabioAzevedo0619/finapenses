@@ -124,6 +124,24 @@ public class TransactionControllerTests {
     }
 
     @Test
+    @DisplayName("Validate creating a expense transaction where amount is zero")
+    void testCreateExpenseWithZeroValue() {
+        final var transaction = Transaction.builder()
+                .name("Grocery Shopping")
+                .amount(BigDecimal.valueOf(0))
+                .transactionType(TransactionType.EXPENSE)
+                .date(LocalDate.now())
+                .build();
+
+        given()
+                .body(transaction)
+                .header(HttpHeaders.CONTENT_TYPE, MediaType.APPLICATION_JSON)
+                .when().post()
+                .then()
+                .statusCode(HttpStatus.SC_INTERNAL_SERVER_ERROR);
+    }
+
+    @Test
     @DisplayName("Validate creating a valid expense transaction where all fields are correctly provided")
     void testCreateValidExpense() {
         final var transaction = Transaction.builder()
