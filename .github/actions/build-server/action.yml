@@ -20,6 +20,7 @@ runs:
 
     - name: Upload server native executable
       uses: actions/upload-artifact@v4
+      working-directory: ./server
       with:
         name: server-executable
         path: target/*-runner
