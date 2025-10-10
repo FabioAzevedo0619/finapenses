@@ -6,6 +6,7 @@ on:
 jobs:
   build-server:
     name: Build server native executable
+    runs-on: ubuntu-latest
     defaults:
       run:
         working-directory: ./server
