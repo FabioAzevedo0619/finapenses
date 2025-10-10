@@ -7,9 +7,6 @@ jobs:
   build-server:
     name: Build server native executable
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: ./server
     steps:
       - name: Build server native executable
         uses: FabioAzevedo0619/finapenses/.github/actions/build-server@main
