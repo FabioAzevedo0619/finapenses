@@ -10,3 +10,12 @@ jobs:
     steps:
       - name: Build server native executable
         uses: FabioAzevedo0619/finapenses/.github/actions/build-server@main
+
+  build-docker-image:
+    name: Build Docker image
+    runs-on: ubuntu-latest
+    needs: build-server
+    steps:
+      - name: Build Docker image
+        uses: FabioAzevedo0619/finapenses/.github/actions/build-image@main
+
