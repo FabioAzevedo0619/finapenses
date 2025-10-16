@@ -33,4 +33,4 @@ runs:
         context: .
         file: Dockerfile.yml
         push: true
-        tags: ghcr.io/${{ github.repository_owner }}/finapenses:latest
+        tags: ghcr.io/fabioazevedo0619/finapenses:latest
