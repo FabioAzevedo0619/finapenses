@@ -3,6 +3,10 @@ name: Build & Release Finapenses Application
 on:
   workflow_dispatch:
 
+permissions:
+  contents: read
+  packages: write
+
 jobs:
   build-server:
     name: Build server native executable
