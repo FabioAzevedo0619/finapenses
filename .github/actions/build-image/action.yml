@@ -1,6 +1,11 @@
 name: 'Build image'
 description: 'Build image using Docker'
 
+inputs:
+  github-token:
+    description: 'GitHub Token for GHCR login'
+    required: true
+
 runs:
   using: 'composite'
   steps:
@@ -20,7 +25,7 @@ runs:
       with:
         registry: ghcr.io
         username: ${{ github.actor }}
-        password: ${{ secrets.GITHUB_TOKEN }}
+        password: ${{ inputs.github-token }}
 
     - name: Build and Push Docker Image (GHCR)
       uses: docker/build-push-action@v5

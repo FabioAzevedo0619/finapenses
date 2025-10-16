@@ -18,4 +18,6 @@ jobs:
     steps:
       - name: Build Docker image
         uses: FabioAzevedo0619/finapenses/.github/actions/build-image@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
 
